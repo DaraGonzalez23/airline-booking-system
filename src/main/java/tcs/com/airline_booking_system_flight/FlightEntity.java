@@ -1,9 +1,7 @@
 package tcs.com.airline_booking_system_flight;
 
 import java.io.Serializable;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -71,7 +69,7 @@ public void setcityDestination(String cityDestination) {
 public LocalDateTime getdepartureDateTime() {
 	return departureDateTime;
 }
-public void setdepartureDateTime(LocalDateTime depaDateTime) {
+public void setdepartureDateTime(LocalDateTime departureDateTime) {
 	this.departureDateTime = departureDateTime;
 }
 public Double getprice() {

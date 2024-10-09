@@ -1,6 +1,8 @@
-package tcs.com.airline_booking_system.hotel;
+package tcs.com.airline_booking_system.service;
 
 import java.util.List;
+
+import tcs.com.airline_booking_system.entity.HotelEntity;
 
 public interface HotelService {
 	

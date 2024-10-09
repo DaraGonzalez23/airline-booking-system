@@ -1,9 +1,13 @@
-package tcs.com.airline_booking_system.hotel;
+package tcs.com.airline_booking_system.util;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import tcs.com.airline_booking_system.entity.HotelEntity;
+import tcs.com.airline_booking_system.repository.HotelRepository;
+import tcs.com.airline_booking_system.service.HotelService;
 
 @Service 
 public class HotelServiceImp implements HotelService{
@@ -28,8 +32,11 @@ public class HotelServiceImp implements HotelService{
 
 	@Override
 	public void delete(Long id) {
-		hotelRepository.deleteById(id);
-		
+		if (hotelRepository.existsById(id)) { // Check if the entity exists before deletion
+            hotelRepository.deleteById(id);
+        } else {
+            throw new IllegalArgumentException("Hotel with ID " + id + " does not exist."); //the method would attempt to delete a non-existing entity
+        }		
 	}
 
 	

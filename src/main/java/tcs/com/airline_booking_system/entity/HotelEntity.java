@@ -1,7 +1,9 @@
-package tcs.com.airline_booking_system.hotel;
+package tcs.com.airline_booking_system.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -30,6 +32,7 @@ public class HotelEntity implements Serializable{ //Object +1 to n
 	@Column(name ="location")
 	private String location;
 	
+	@JsonFormat (pattern = "yyyy-MM-dd")
 	@Column(name ="check_in")
 	private LocalDate checkIn;
 	
@@ -48,11 +51,11 @@ public class HotelEntity implements Serializable{ //Object +1 to n
 		this.price = price;
 	
 	}
-	public long getid() {
+	public long getId() {
 		return id;
 	}
 	
-	public void setid(Long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	
@@ -80,7 +83,7 @@ public class HotelEntity implements Serializable{ //Object +1 to n
 	public Float getPrice() {
 		return price;
 	}
-	public void price(Float price) {
+	public void setPrice(Float price) {
 		this.price = price;
 	}
 	
